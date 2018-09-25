@@ -1,0 +1,79 @@
+<html>
+
+<head>
+ 
+ <title>Firebase Login</title>
+   <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/mytrash-85b30.appspot.com/o/WebsiteImages%2Ffavicon.ico?alt=media&token=5dbca093-4aa3-443f-8faa-4f879635fa93" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+ 
+ <link rel="stylesheet" href="style.css" />
+</head>
+
+<body background = "backgroundimage.jpg">
+
+  
+<div id="login_div" class="main-div">
+
+    <h3>MyTrash Website Login Page</h3>
+
+    <input type="email" placeholder="Email..." id="email_field" />
+
+    <input type="password" placeholder="Password..." id="password_field" />
+
+
+    <button onclick="login()">Login to Account</button>
+
+</div>
+
+<div id="user_div" class="loggedin-div">
+
+    <h3>Home</h3>
+
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+	<button onclick="schedule()">Schedule</button>
+	<button onclick="trashbin()">Trashbin</button>	
+	<button onclick="inbox()">Inbox</button>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<div id="schedule_div" class="scheduleScreen-div">
+
+   <h3>Schedule Screen</h3>
+   <input type="text" placeholder="Year..." id="year_field" />
+   <input type="text" placeholder="Month..." id="month_field" />
+   <input type="text" placeholder="Day..." id="day_field" />
+   <input type="text" placeholder="Biodegradable or Non-Biodegradable..." id="type_field" />
+   <input type="text" placeholder="Collection Time(7:00 A.M. to 8:00 A.M.)..." id="time_field" />  
+   <button onclick="attemptCreate()">Create Schedule</button>    
+   <button onclick="backtoHome()">Back</button>    
+</div>
+
+  
+<div id="trashbin_div" class="trashbin-div">
+
+   <h3>Trashbin Screen</h3>
+   <input type="text" placeholder="Trashbin ID Number..." id="id_field" />
+   <input type="text" placeholder="Latitude..." id="lat_field" />
+   <input type="text" placeholder="Longitude..." id="lon_field" /> 
+   <button onclick="attemptTrash()">Create Trashbin</button>    
+   <button onclick="backtoHome()">Back</button>    
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDo5m9ucmh0xdds0p6-xaVOiI7s0rGL7NY",
+    authDomain: "mytrash-85b30.firebaseapp.com",
+    databaseURL: "https://mytrash-85b30.firebaseio.com",
+    projectId: "mytrash-85b30",
+    storageBucket: "mytrash-85b30.appspot.com",
+    messagingSenderId: "553050337334"
+  };
+  firebase.initializeApp(config);
+  firebase.initializeApp(config);
+</script>
+<script src="index.js"></script>
+
+</body>
+</html>
